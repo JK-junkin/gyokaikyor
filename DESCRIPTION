@@ -25,6 +25,7 @@ Imports:
     magrittr,
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    stockdbr
 Suggests: 
     usethis
