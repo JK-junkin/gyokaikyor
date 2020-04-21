@@ -10,8 +10,8 @@
 #' gyokaikyorize(df = data.frame())
 #' }
 #' @export
-gyokaikyorize <- function(df, species) {
-  if (missing(species) || length(species) == 0) {
+gyokaikyorize <- function(df, species = NULL) {
+  if (is.null(species) || length(species) == 0) {
     stop("Specify `species` such as 'maaji', 'maiwashi', 'masaba', etc..")
   }
 
@@ -35,7 +35,7 @@ gyokaikyorize <- function(df, species) {
 }
 
 #' @export
-gyokaikyorize.default <- function(df, species) {
+gyokaikyorize.default <- function(df, species = NULL) {
   if (species != "maaji") {
     stop("Argument `species` only supports 'maaji' for now.")
   }
