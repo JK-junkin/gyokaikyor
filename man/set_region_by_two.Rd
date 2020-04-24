@@ -17,8 +17,3 @@ Regionalized prefectures based on the boundary_prefec
 \description{
 Separate Prefecs into Eastern and Western regions
 }
-\examples{
-/dontrun{
-set_region_by_two(prefec = "愛知", boundary_prefec = "和歌山")}
-
-}
