@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#' /dontrun{
+#' \dontrun{
 #' set_region_by_two(prefec = "愛知", boundary_prefec = "和歌山")}
 #'
 set_region_by_two <- function(prefec, boundary_prefec) {
