@@ -1,6 +1,12 @@
 context("Function set_region_by_two()")
 
-catch_data <- load_catch()
+prefec_sample <- c("北海道", "青森", "岩手", "宮城", "福島", "茨城", "千葉",
+               "神奈川", "静岡", "愛知", "三重", "和歌山", "大阪", "徳島",
+               "高知", "愛媛", "大分", "宮崎", "鹿児島")
+
+catch_sample <- seq(from = 1, to = 19, by = 1)
+
+sample_data <- tibble::tibble(Prefec = prefec_sample, Catch_ton = catch_sample)
 
 test_that("Prefec is regioned correctly", {
   expect_equal(set_region_by_two(prefec = "青森", boundary_prefec = "和歌山"),
@@ -13,7 +19,7 @@ test_that("Multiple prefec is regioned correctly", {
 })
 
 test_that("Multiple prefec in a tibble format is divided into two regions", {
-  expect_equal(catch_data %>%
+  expect_equal(sample_data %>%
                  dplyr::mutate(Region = set_region_by_two(Prefec, "和歌山")) %>%
                  dplyr::select(Region) %>%
                  unique() %>%
