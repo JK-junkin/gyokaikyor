@@ -4,8 +4,8 @@
 #' @param Regional Name of a Region separated by a boundary_prefec
 #'
 #' @return ggplot figure
-each_graph <- function(data, Regional) {
-  ggplot2::ggplot(dplyr::filter(data, Region == Regional)) +
+each_graph <- function(data, regional) {
+  ggplot2::ggplot(dplyr::filter(data, Region == regional)) +
     ggplot2::geom_col(ggplot2::aes(Date, Catch, fill = Prefec)) +
     ggplot2::facet_wrap(~Region, nrow = 1) +
     ggplot2::theme_minimal()
@@ -51,10 +51,10 @@ regional_graph <- function(data, species_regex, boundary_prefec, unit = "ton") {
                                             sum(Catch_ton / 10000, na.rm = T),
                                             sum(Catch_ton, na.rm = T))))
 
-  Region_list <- unique(dat$Region)
+  region_list <- unique(dat$Region)
 
-  g1 <- ggplot2::ggplotGrob(each_graph(dat, Regional = Region_list[1]))
-  g2 <- ggplot2::ggplotGrob(each_graph(dat, Regional = Region_list[2]))
+  g1 <- ggplot2::ggplotGrob(each_graph(dat, regional = region_list[1]))
+  g2 <- ggplot2::ggplotGrob(each_graph(dat, regional = region_list[2]))
 
   grid::grid.newpage()
   grid::grid.draw(rbind(g1, g2))
