@@ -21,12 +21,3 @@ ggplot figure
 \description{
 Draw a time vs catch plot separated into two regions
 }
-\examples{
-\dontrun{
-regional_graph(
-data = stockdbr::load_catch(),
-species_regex = "^マイワシ$|^maiwashi$",
-boundary_prefec = "三重",
-unit = "manton")
-}
-}
