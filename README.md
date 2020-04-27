@@ -25,3 +25,9 @@ data <- gyokaikyor::read_db(path = "path/to/your/data-file.xlsx")
 # alternatively, you can use stockdbr package for input data
 data <- stockdbr::load_catch()
 ```
+
+After data loading successfully finished, you should run below code and create PDF or HTML document.
+```r
+gyokaikyor::create_document(species = "maaji", filetype = "pdf")
+```
+This example code shows to make PDF document about 'maaji' (Trachurus japonicus).
