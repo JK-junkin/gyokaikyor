@@ -22,8 +22,6 @@ each_graph <- function(data, regional) {
 #' @export
 regional_graph <- function(data, species_regex, boundary_prefec, unit = "ton") {
 
-  .Deprecated("gyokaikyor::regional_graph")
-
   species_list <- unique(data$Species)
   target_species <- stringr::str_extract(species_list, species_regex)
 
