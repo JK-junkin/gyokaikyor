@@ -20,15 +20,6 @@ each_graph <- function(data, regional) {
 #'
 #' @return ggplot figure
 #' @export
-#'
-#' @examples
-#' \dontrun{
-#' regional_graph(
-#' data = stockdbr::load_catch(),
-#' species_regex = "^マイワシ$|^maiwashi$",
-#' boundary_prefec = "三重",
-#' unit = "manton")
-#' }
 regional_graph <- function(data, species_regex, boundary_prefec, unit = "ton") {
 
   .Deprecated("gyokaikyor::regional_graph")
