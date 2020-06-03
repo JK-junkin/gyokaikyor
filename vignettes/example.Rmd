@@ -41,6 +41,7 @@ library(scales)
 library(patchwork)
 library(kableExtra)
 library(manucheckr)
+print("load_all() START")
 devtools::load_all()
 print("load_all() DONE")
 ```
