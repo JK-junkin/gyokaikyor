@@ -42,12 +42,7 @@ library(patchwork)
 library(kableExtra)
 library(manucheckr)
 devtools::load_all()
-print("Debugging")
-print("Debugging")
-print("Debugging")
-print("Debugging")
-print("Debugging")
-print("Debugging")
+print("load_all() DONE")
 ```
 
 # マアジ太平洋系群等の漁況予報
@@ -76,6 +71,7 @@ print("Debugging")
 
 ### 漁況の経過（`r year()`年7月～11月）および見通し（`r year(1)`年1月～6月）についての説明
 
+`r print("xl2df() START")`
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 spcs  <- "maaji"
@@ -87,7 +83,7 @@ maaji <- xl2df(fname = "../tests/testthat/excel/gyokaikyo_dummy_maaji.xlsx",
                                Fishery == "全漁業", # 静岡県のみ全漁業を使用
                                Fishery != "全漁業")) # 他県は全漁業以外の合計値
 ```
-
+`r print("xl2df() END")`
 
 #### 1．資源状態
 資源量は`r editme("1986年以降増加し、1990年代半ばは15万トン～16万トンと高い水準で推移したが、1997年以降減少した")`。`r editme("2009年～2013年は横ばいで推移したが、その後再び減少している")`。加入量は`r editme("1993年をピークに減少し、2009年以降3.2億尾～7.1億尾と低い水準で推移している")`。`r year()`年度の資源評価において、`r year(- 1)`年の資源量は`r editme("4.3万")`トン、親魚量が`r editme("2.3万")`トンと推定され、
@@ -128,6 +124,7 @@ df2table(maaji, year = params$year - 1, header = FALSE, Japanese = TRUE)
 df2table(maaji, year = params$year - 0, header = FALSE, Japanese = TRUE)
 ```
 ### 近年の太平洋岸のマアジの主要港水揚量
+`r print("set_region_by_two() START")`
 
 ```{r, fig.width = 8, fig.height = 6, echo = FALSE, warning = FALSE, message = FALSE}
 catch_maaji <-
@@ -166,10 +163,13 @@ eastpac <-
 westpac + eastpac + patchwork::plot_layout(nrow = 2)
 
 ```
+`r print("set_region_by_two() END")`
 
 図 近年の太平洋岸のマアジの主要港水揚量 上：和歌山以西，下：三重以東
 
 ### 月別体長階級別漁獲尾数
+
+`r print("parse_legacy_maaji_length_dist() START")`
 
 ```{r, fig.width = 8, fig.height = 11, echo = FALSE}
 bldata <-
@@ -198,9 +198,10 @@ bldata %>%
         panel.spacing.y = unit(0.01, units = "npc"),
         panel.grid.minor = element_blank())
 ```
-
+`r print("parse_legacy_maaji_length_dist() END")`
 ### 年齢別漁獲尾数
 
+`r print("caa START")`
 ```{r catch_at_age, fig.width = 9, echo = FALSE, message = FALSE, warning = FALSE}
 caa_maaji <- xl2df(fname = "../tests/testthat/excel/catch_at_age_maaji.xlsx",
                    year = params$year,
@@ -218,7 +219,7 @@ plot_grid(
   rel_widths = c(1.5, 1)
 )
 ```
-
+`r print("caa END")`
 図 年齢別漁獲尾数　左は1982～2018年の農林統計で引き延ばした年齢別漁獲尾数。<br>
 右は2006～2019年の主要港年齢別漁獲尾数
 
