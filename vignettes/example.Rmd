@@ -42,6 +42,12 @@ library(patchwork)
 library(kableExtra)
 library(manucheckr)
 devtools::load_all()
+print("Debugging")
+print("Debugging")
+print("Debugging")
+print("Debugging")
+print("Debugging")
+print("Debugging")
 ```
 
 # マアジ太平洋系群等の漁況予報
