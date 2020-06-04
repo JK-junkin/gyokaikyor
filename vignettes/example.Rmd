@@ -9,26 +9,5 @@ params:
   year: 2019
   draft: FALSE
 ---
+hello
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-  )
-year <- function(x = 0) {
-  yr <- params$year + x
-  manucheckr::highlight(yr)
-}
-
-editme <- function(x) manucheckr::checkme(x)
-
-sum_jul_nov <- function(dat, prefec, fishery = unique(dat$Fishery)) {
-  dat %>%
-    dplyr::filter(Year == params$year, dplyr::between(Month, 7, 11),
-                  Prefec %in% prefec,
-                  Fishery %in% fishery) %>%
-    dplyr::pull(Catch_ton) %>% sum(na.rm = TRUE) %>%
-    round(0) %>%
-    manucheckr::highlight()
-}
-```
