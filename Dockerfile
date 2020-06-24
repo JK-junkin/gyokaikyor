@@ -1,4 +1,4 @@
-FROM rocker/rstudio:3.6.3
+FROM rocker/rstudio:latest
 
 COPY . /gyokaikyor
 
