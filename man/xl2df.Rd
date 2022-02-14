@@ -2,7 +2,7 @@
 % Please edit documentation in R/parse_legacy.R
 \name{xl2df}
 \alias{xl2df}
-\title{Convert legacy Excel to data frome}
+\title{Convert legacy Excel to data frame}
 \usage{
 xl2df(fname, year, type, spcs)
 }
@@ -11,8 +11,10 @@ xl2df(fname, year, type, spcs)
 
 \item{year}{Newest year reported}
 
+\item{type}{Type of the excel data, "catch" as an example}
+
 \item{spcs}{Spcies name such as: \itemize{\item{'maaji'}}}
 }
 \description{
-Convert legacy Excel to data frome
+Convert legacy Excel to data frame
 }

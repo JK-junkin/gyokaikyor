@@ -9,7 +9,7 @@ each_graph(data, regional)
 \arguments{
 \item{data}{Tidy catch data sorted by the business requirements}
 
-\item{Regional}{Name of a Region separated by a boundary_prefec}
+\item{regional}{Name of a Region separated by a boundary_prefec}
 }
 \value{
 ggplot figure
