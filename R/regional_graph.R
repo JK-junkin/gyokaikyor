@@ -1,7 +1,7 @@
 #' Draw a time series catch plot for each region
 #'
 #' @param data Tidy catch data sorted by the business requirements
-#' @param Regional Name of a Region separated by a boundary_prefec
+#' @param regional Name of a Region separated by a boundary_prefec
 #'
 #' @return ggplot figure
 each_graph <- function(data, regional) {
