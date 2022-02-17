@@ -4,7 +4,14 @@
 \alias{df2table}
 \title{Generate catch table for report}
 \usage{
-df2table(df, spcs = NULL, year, format = "html", header = TRUE)
+df2table(
+  df,
+  spcs = NULL,
+  year,
+  format = "html",
+  header = TRUE,
+  Japanese = FALSE
+)
 }
 \arguments{
 \item{df}{Data frame with
@@ -17,6 +24,8 @@ df2table(df, spcs = NULL, year, format = "html", header = TRUE)
 \item{format}{Select format output}
 
 \item{header}{TRUE to include header, FALSE to remove header}
+
+\item{Japanese}{TRUE to convert Year, Month, Sum to Japanese}
 }
 \description{
 Generate catch table for report

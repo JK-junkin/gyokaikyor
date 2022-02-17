@@ -2,6 +2,7 @@
 #'
 #' @param fname Legacy Excel data
 #' @param year Newest year reported
+#' @param type Type of the excel data, "catch" as an example
 #' @param spcs Spcies name such as: \itemize{\item{'maaji'}}
 legacy <- function(fname, year, type, spcs) {
   structure(list(fname = fname, year = year, spcs = spcs,
@@ -65,9 +66,13 @@ parse.catch_maaji <- function(catch_maaji) {
                                              Catch_ton))
 }
 
-#' Convert legacy Excel to data frome
+#' Convert legacy Excel to data frame
 #'
-#' @inheritParams legacy
+#' @param fname Legacy Excel data
+#' @param year Newest year reported
+#' @param type Type of the excel data, "catch" as an example
+#' @param spcs Spcies name such as: \itemize{\item{'maaji'}}
+#'
 #' @export
 xl2df <- function(fname, year, type, spcs) {
   legacy(fname, year = year, type = type, spcs = spcs) %>%

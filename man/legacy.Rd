@@ -11,6 +11,8 @@ legacy(fname, year, type, spcs)
 
 \item{year}{Newest year reported}
 
+\item{type}{Type of the excel data, "catch" as an example}
+
 \item{spcs}{Spcies name such as: \itemize{\item{'maaji'}}}
 }
 \description{
